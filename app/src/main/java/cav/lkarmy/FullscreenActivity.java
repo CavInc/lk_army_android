@@ -1,5 +1,6 @@
 package cav.lkarmy;
 
+import cav.lkarmy.util.MyWebViewClient;
 import cav.lkarmy.util.SystemUiHider;
 
 import android.annotation.TargetApi;
@@ -9,6 +10,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.MotionEvent;
 import android.view.View;
+import android.webkit.WebView;
 
 
 /**
@@ -53,11 +55,17 @@ public class FullscreenActivity extends Activity {
         setContentView(R.layout.activity_fullscreen);
 
         final View controlsView = findViewById(R.id.fullscreen_content_controls);
-        final View contentView = findViewById(R.id.fullscreen_content);
+        //final View contentView = findViewById(R.id.fullscreen_content);
+        final WebView webView = (WebView) findViewById(R.id.webView);
+        webView.getSettings().setJavaScriptEnabled(true);
+        webView.setWebViewClient(new MyWebViewClient());
+        webView.loadUrl("http://developer.alexanderklimov.ru/android");
+
 
         // Set up an instance of SystemUiHider to control the system UI for
         // this activity.
-        mSystemUiHider = SystemUiHider.getInstance(this, contentView, HIDER_FLAGS);
+        mSystemUiHider = SystemUiHider.getInstance(this,webView,HIDER_FLAGS);
+        //mSystemUiHider = SystemUiHider.getInstance(this, contentView, HIDER_FLAGS);
         mSystemUiHider.setup();
         mSystemUiHider
                 .setOnVisibilityChangeListener(new SystemUiHider.OnVisibilityChangeListener() {
@@ -98,6 +106,7 @@ public class FullscreenActivity extends Activity {
                 });
 
         // Set up the user interaction to manually show or hide the system UI.
+        /*
         contentView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -108,7 +117,7 @@ public class FullscreenActivity extends Activity {
                 }
             }
         });
-
+        */
         // Upon interacting with UI controls, delay any scheduled hide()
         // operations to prevent the jarring behavior of controls going away
         // while interacting with the UI.

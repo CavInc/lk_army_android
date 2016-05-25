@@ -58,8 +58,16 @@ public class FullscreenActivity extends Activity {
         //final View contentView = findViewById(R.id.fullscreen_content);
         final WebView webView = (WebView) findViewById(R.id.webView);
         webView.getSettings().setJavaScriptEnabled(true);
+        webView.getSettings().setDomStorageEnabled(true);
+        webView.getSettings().setSupportZoom(true);
         webView.setWebViewClient(new MyWebViewClient());
-        webView.loadUrl("http://developer.alexanderklimov.ru/android");
+       // webView.loadUrl("http://developer.alexanderklimov.ru/android");
+        webView.loadUrl("http://kempir.com:8000");
+        String uname="odminko";
+        String password="1245";
+        webView.loadUrl("javascript: {" +
+                "document.getElementsByName('user').value = '"+uname +"';" +
+                "document.getElementsByName('pass').value = '"+password+"';};");
 
 
         // Set up an instance of SystemUiHider to control the system UI for
@@ -67,6 +75,8 @@ public class FullscreenActivity extends Activity {
         mSystemUiHider = SystemUiHider.getInstance(this,webView,HIDER_FLAGS);
         //mSystemUiHider = SystemUiHider.getInstance(this, contentView, HIDER_FLAGS);
         mSystemUiHider.setup();
+
+        /*
         mSystemUiHider
                 .setOnVisibilityChangeListener(new SystemUiHider.OnVisibilityChangeListener() {
                     // Cached values.
@@ -104,6 +114,7 @@ public class FullscreenActivity extends Activity {
                         }
                     }
                 });
+        */
 
         // Set up the user interaction to manually show or hide the system UI.
         /*
@@ -121,9 +132,10 @@ public class FullscreenActivity extends Activity {
         // Upon interacting with UI controls, delay any scheduled hide()
         // operations to prevent the jarring behavior of controls going away
         // while interacting with the UI.
-        findViewById(R.id.dummy_button).setOnTouchListener(mDelayHideTouchListener);
-    }
 
+       // findViewById(R.id.dummy_button).setOnTouchListener(mDelayHideTouchListener);
+    }
+/*
     @Override
     protected void onPostCreate(Bundle savedInstanceState) {
         super.onPostCreate(savedInstanceState);
@@ -133,13 +145,14 @@ public class FullscreenActivity extends Activity {
         // are available.
         delayedHide(100);
     }
-
+*/
 
     /**
      * Touch listener to use for in-layout UI controls to delay hiding the
      * system UI. This is to prevent the jarring behavior of controls going away
      * while interacting with activity UI.
      */
+/*
     View.OnTouchListener mDelayHideTouchListener = new View.OnTouchListener() {
         @Override
         public boolean onTouch(View view, MotionEvent motionEvent) {
@@ -149,8 +162,9 @@ public class FullscreenActivity extends Activity {
             return false;
         }
     };
-
+*/
     Handler mHideHandler = new Handler();
+
     Runnable mHideRunnable = new Runnable() {
         @Override
         public void run() {

@@ -13,4 +13,14 @@ public class MyWebViewClient extends WebViewClient {
         view.loadUrl(url);
         return true;
     }
+
+    public void onPageFinished (WebView view, String url) {
+        String uname="odminko";
+        String password="1245";
+
+        view.loadUrl("javascript: {" +
+                "document.getElementsByName('user')[0].value = '" + uname + "';" +
+                "document.getElementsByName('pass')[0].value = '" + password + "';};");
+
+    }
 }

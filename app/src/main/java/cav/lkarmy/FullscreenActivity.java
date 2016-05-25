@@ -65,9 +65,7 @@ public class FullscreenActivity extends Activity {
         webView.loadUrl("http://kempir.com:8000");
         String uname="odminko";
         String password="1245";
-        webView.loadUrl("javascript: {" +
-                "document.getElementsByName('user').value = '"+uname +"';" +
-                "document.getElementsByName('pass').value = '"+password+"';};");
+
 
 
         // Set up an instance of SystemUiHider to control the system UI for

@@ -60,7 +60,6 @@ public class FullscreenActivity extends Activity {
         webView.getSettings().setJavaScriptEnabled(true);
         webView.getSettings().setDomStorageEnabled(true);
         webView.getSettings().setSupportZoom(true);
-
         webView.setWebViewClient(new MyWebViewClient());
        // webView.loadUrl("http://developer.alexanderklimov.ru/android");
         webView.loadUrl("http://kempir.com:8000");

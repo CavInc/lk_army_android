@@ -79,11 +79,15 @@ public class FullscreenActivity extends Activity {
         webView.setWebViewClient(new MyWebViewClient());
         webView.setWebChromeClient(new MyWebChromeClient());
        // webView.loadUrl("http://developer.alexanderklimov.ru/android");
-        webView.loadUrl("http://kempir.com:8000");
+       // webView.loadUrl("http://kempir.com:8000");
+        webView.loadUrl("https://cabinet.mil.ru/login.aspx");
         String uname="odminko";
         String password="1245";
-
-
+/*
+        webView.loadUrl("javascript: {" +
+                "document.getElementsById('ctl00_MainContent_Login1_UserName').value = '" + uname + "';" +
+                "document.getElementsByName('pass')[0].value = '" + password + "';};");
+*/
 
         // Set up an instance of SystemUiHider to control the system UI for
         // this activity.

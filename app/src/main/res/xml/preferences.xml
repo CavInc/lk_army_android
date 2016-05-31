@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="Вход с регистрацией">
+        <EditTextPreference android:name="LoginReg"
+            android:title="Логин"
+            android:key="loginReg"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:defaultValue="Nothing">
+        </EditTextPreference>
+        <EditTextPreference android:name="LoginPass"
+            android:title="Пароль"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:key="loginPass">
+        </EditTextPreference>
+    </PreferenceCategory>
+    <PreferenceCategory android:title="Вход без регистрации военнослужащий">
+        <EditTextPreference android:name="IdReg"
+            android:title="Личный номер"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:key="imSign">
+        </EditTextPreference>
+        <EditTextPreference android:name="dayBirth"
+            android:title="Дата рождения"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:key="dayBirth">
+        </EditTextPreference>
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/pref_title_login_gov">
+        <EditTextPreference android:name="snils"
+            android:title="СНИЛС"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:key="snils">
+        </EditTextPreference>
+        <EditTextPreference android:name="DayBitrhGS"
+            android:title="Дата рождения"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:key="dayBirthGS">
+        </EditTextPreference>
+
+    </PreferenceCategory>
+</PreferenceScreen>

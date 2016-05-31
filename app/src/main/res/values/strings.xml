@@ -4,4 +4,5 @@
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
     <string name="menu_about">О нас</string>
+    <string name="pref_title_login_gov">Вход без регистрациии гос.служащий</string>
 </resources>

@@ -4,13 +4,13 @@ import cav.lkarmy.util.MyWebChromeClient;
 import cav.lkarmy.util.MyWebViewClient;
 
 
+import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
 
 import android.preference.PreferenceManager;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -22,7 +22,7 @@ import android.webkit.WebView;
 import java.util.HashMap;
 
 
-public class FullscreenActivity extends AppCompatActivity {
+public class FullscreenActivity extends Activity {
 
     private WebView webView;
 
@@ -103,6 +103,7 @@ public class FullscreenActivity extends AppCompatActivity {
         super.onStart();
         getPrefs();
         webView.loadUrl("http://kempir.com:8000/");
+        //webView.loadUrl("http://kempir.com:8000/");
     }
 
     HashMap<String,String> mapPref;

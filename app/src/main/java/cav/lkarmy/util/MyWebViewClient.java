@@ -1,5 +1,6 @@
 package cav.lkarmy.util;
 
+import android.util.Log;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
@@ -15,16 +16,18 @@ public class MyWebViewClient extends WebViewClient {
     }
 
     public void onPageFinished (WebView view, String url) {
+        Log.i("PAGEFINISHED","YES FINISHED");
         String uname="odminko";
         String password="1245";
-/*
+
         view.loadUrl("javascript: {" +
                 "document.getElementsByName('user')[0].value = '" + uname + "';" +
                 "document.getElementsByName('pass')[0].value = '" + password + "';};");
-*/
+/*
         view.loadUrl("javascript: {" +
                 "document.getElementById('ctl00_MainContent_Login1_UserName').value = '" + uname + "';" +
                 "document.getElementsByName('pass')[0].value = '" + password + "';};");
+*/
     }
 
 }

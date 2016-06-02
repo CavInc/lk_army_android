@@ -1,5 +1,6 @@
 package cav.lkarmy;
 
+import cav.lkarmy.util.Glu;
 import cav.lkarmy.util.MyWebChromeClient;
 import cav.lkarmy.util.MyWebViewClient;
 
@@ -102,8 +103,24 @@ public class FullscreenActivity extends Activity {
     public void onStart(){
         super.onStart();
         getPrefs();
-        webView.loadUrl("http://kempir.com:8000/");
         //webView.loadUrl("http://kempir.com:8000/");
+        // webView.loadUrl("https://cabinet.mil.ru/login.aspx");
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.KITKAT) {
+            webView.loadUrl("https://cabinet.mil.ru/login.aspx");
+            // Log.i("MAIN LOG","DO KITKAT");
+
+        }else {
+            //  Log.i("MAIN LOG","KITKAT AND LATER");
+            runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    // Code for WebView goes here
+                    //webView.loadUrl("http://kempir.com:8000/");
+                    webView.loadUrl("https://cabinet.mil.ru/login.aspx");
+
+                }
+            });
+        }
     }
 
     HashMap<String,String> mapPref;
@@ -118,6 +135,7 @@ public class FullscreenActivity extends Activity {
         mapPref.put("ctl00_MainContent_Login1_tbxBirthday",prefs.getString("dayBirth","Nothing"));
         mapPref.put("ctl00_MainContent_Login1_SNILS",prefs.getString("snils",""));
         mapPref.put("ctl00_MainContent_Login1_tbxBirthday",prefs.getString("dayBirthGS","Nothing"));
+        Glu.userData=mapPref;
 
         Log.i("MAIN LOG",mapPref.get("ctl00_MainContent_Login1_UserName"));
 

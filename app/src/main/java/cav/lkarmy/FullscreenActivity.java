@@ -107,10 +107,10 @@ public class FullscreenActivity extends Activity {
         // webView.loadUrl("https://cabinet.mil.ru/login.aspx");
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.KITKAT) {
             webView.loadUrl("https://cabinet.mil.ru/login.aspx");
-            // Log.i("MAIN LOG","DO KITKAT");
+            Log.i("MAIN LOG","DO KITKAT");
 
         }else {
-            //  Log.i("MAIN LOG","KITKAT AND LATER");
+            Log.i("MAIN LOG","KITKAT AND LATER");
             runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
@@ -138,6 +138,7 @@ public class FullscreenActivity extends Activity {
         Glu.userData=mapPref;
 
         Log.i("MAIN LOG",mapPref.get("ctl00_MainContent_Login1_UserName"));
+        Log.i("MAIN LOG",mapPref.get("ctl00_MainContent_Login1_SerialNumber"));
 
 
     }

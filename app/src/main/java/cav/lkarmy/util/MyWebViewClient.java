@@ -25,7 +25,6 @@ public class MyWebViewClient extends WebViewClient {
         Log.i("PAGEFINISHED", "YES FINISHED");
 
         String JS="function X18(userName,loginPass,serialNum,SNILS,tbxBirthday){\n" +
-                " console.log(\"YEST\");\n" +
                 " if ($(\"#ctl00_MainContent_Login1_UserName\").val()!=undefined) {\n" +
                 "    $(\"#ctl00_MainContent_Login1_UserName\").val(userName);\n" +
                 " };\n" +
@@ -41,20 +40,29 @@ public class MyWebViewClient extends WebViewClient {
                 " if ($(\"#ctl00_MainContent_Login1_tbxBirthday\").val()!=undefined) {\n" +
                 "    $(\"#ctl00_MainContent_Login1_tbxBirthday\").val(tbxBirthday);\n" +
                 " };\n" +
-                " setTimeout(function(){X18(userName,loginPass,serialNum,SNILS,tbxBirthday)},10000);\n" +
+                " setTimeout(function(){X18(userName,loginPass,serialNum,SNILS,tbxBirthday)},8000);\n" +
                 "}";
 
 
         if ((Build.VERSION.SDK_INT < Build.VERSION_CODES.KITKAT)) {
-            view.loadUrl("javascript: {" +
-                    "document.getElementById('ctl00_MainContent_Login1_UserName').value = '" + Glu.userData.get("ctl00_MainContent_Login1_UserName") + "';" +
-                    "document.getElementById('ctl00_MainContent_Login1_Password').value = '" + Glu.userData.get("ctl00_MainContent_Login1_Password") + "';};");
+            view.loadUrl("javascript: {"+JS+
+                        "X18('"+Glu.userData.get("ctl00_MainContent_Login1_UserName")+"','"+Glu.userData.get("ctl00_MainContent_Login1_Password")+
+                    "','"+Glu.userData.get("ctl00_MainContent_Login1_SerialNumber")+
+                    "','"+Glu.userData.get("ctl00_MainContent_Login1_SNILS")+"','"+Glu.userData.get("ctl00_MainContent_Login1_tbxBirthday")+"'); };");
+            //view.loadUrl("javascript: {" +
+            //        "document.getElementById('ctl00_MainContent_Login1_UserName').value = '" + Glu.userData.get("ctl00_MainContent_Login1_UserName") + "';" +
+           //         "document.getElementById('ctl00_MainContent_Login1_Password').value = '" + Glu.userData.get("ctl00_MainContent_Login1_Password") + "';};");
 
         } else {
-            view.evaluateJavascript("javascript: {" +
-                    "document.getElementById('ctl00_MainContent_Login1_UserName').value = '" + Glu.userData.get("ctl00_MainContent_Login1_UserName") + "';" +
-                    "document.getElementById('ctl00_MainContent_Login1_Password').value = '" + Glu.userData.get("ctl00_MainContent_Login1_Password") + "';" +
-                    "document.getElementById('ctl00_MainContent_Login1_SerialNumber').value=" + Glu.userData.get("ctl00_MainContent_Login1_SerialNumber") + ";};", null);
+            view.evaluateJavascript("javascript: {"+JS+
+                    "X18('"+Glu.userData.get("ctl00_MainContent_Login1_UserName")+"','"+Glu.userData.get("ctl00_MainContent_Login1_Password")+
+                    "','"+Glu.userData.get("ctl00_MainContent_Login1_SerialNumber")+
+                    "','"+Glu.userData.get("ctl00_MainContent_Login1_SNILS")+"','"+Glu.userData.get("ctl00_MainContent_Login1_tbxBirthday")+"'); };",null);
+
+            //view.evaluateJavascript("javascript: {" +
+            //        "document.getElementById('ctl00_MainContent_Login1_UserName').value = '" + Glu.userData.get("ctl00_MainContent_Login1_UserName") + "';" +
+            //        "document.getElementById('ctl00_MainContent_Login1_Password').value = '" + Glu.userData.get("ctl00_MainContent_Login1_Password") + "';" +
+            //        "document.getElementById('ctl00_MainContent_Login1_SerialNumber').value=" + Glu.userData.get("ctl00_MainContent_Login1_SerialNumber") + ";};", null);
 
         }
     }

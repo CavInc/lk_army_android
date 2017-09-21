@@ -25,11 +25,11 @@ public class MyWebViewClient extends WebViewClient {
         Log.i("PAGEFINISHED", "YES FINISHED");
 
         String JS="function X18(userName,loginPass,serialNum,SNILS,tbxBirthday){\n" +
-                " if ($(\"#ctl00_MainContent_Login1_UserName\").val()!=undefined) {\n" +
-                "    $(\"#ctl00_MainContent_Login1_UserName\").val(userName);\n" +
+                " if ($(\"#clock_number\").val()!=undefined) {\n" +
+                "  var cn=$(\"#clock_number\"); cn.focus(); cn.val(userName);\n" +
                 " };\n" +
-                " if ($(\"#ctl00_MainContent_Login1_Password\").val()!=undefined) {\n" +
-                "    $(\"#ctl00_MainContent_Login1_Password\").val(loginPass);\n" +
+                " if ($(\"#password\").val()!=undefined) {\n" +
+                "  var ps=$(\"#password\"); ps.focus(); ps.val(loginPass);\n" +
                 " };\n" +
                 " if ($(\"#ctl00_MainContent_Login1_SerialNumber\").val()!=undefined) {\n" +
                 "    $(\"#ctl00_MainContent_Login1_SerialNumber\").val(serialNum);\n" +
@@ -40,7 +40,7 @@ public class MyWebViewClient extends WebViewClient {
                 " if ($(\"#ctl00_MainContent_Login1_tbxBirthday\").val()!=undefined) {\n" +
                 "    $(\"#ctl00_MainContent_Login1_tbxBirthday\").val(tbxBirthday);\n" +
                 " };\n" +
-                " setTimeout(function(){X18(userName,loginPass,serialNum,SNILS,tbxBirthday)},8000);\n" +
+                " //setTimeout(function(){X18(userName,loginPass,serialNum,SNILS,tbxBirthday)},8000);\n" +
                 "}";
 
 

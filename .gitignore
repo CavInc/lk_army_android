@@ -1,3 +1,12 @@
+<<<<<<< HEAD
+.gradle
+/local.properties
+/.idea/workspace.xml
+/.idea/libraries
+.DS_Store
+/build
+/captures
+=======
 # Created by .ignore support plugin (hsz.mobi)
 ### JetBrains template
 # Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio and Webstorm
@@ -46,3 +55,4 @@ crashlytics.properties
 crashlytics-build.properties
 fabric.properties
 
+>>>>>>> 689e1b2ed8a4ae68356c1a1f8e66d6d9ffa1f44e

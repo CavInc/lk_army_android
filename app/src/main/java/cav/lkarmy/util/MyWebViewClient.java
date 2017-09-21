@@ -31,16 +31,16 @@ public class MyWebViewClient extends WebViewClient {
                 " if ($(\"#password\").val()!=undefined) {\n" +
                 "  var ps=$(\"#password\"); ps.focus(); ps.val(loginPass);\n" +
                 " };\n" +
-                " if ($(\"#ctl00_MainContent_Login1_SerialNumber\").val()!=undefined) {\n" +
-                "    $(\"#ctl00_MainContent_Login1_SerialNumber\").val(serialNum);\n" +
+                " if ($(\"#personal_number\").val()!=undefined) {\n" +
+                "  var ts=$(\"div.select-input\").text(); \n"+
+                "  if (ts==\"Гражданский служащий\") { \n"+
+                "    var pns=$(\"#personal_number\"); pns.focus(); pns.val(SNILS); }\n" +
+                "    else { var pn=$(\"#personal_number\"); pn.focus(); pn.val(serialNum); }\n" +
                 " };\n" +
-                " if ($(\"#ctl00_MainContent_Login1_SNILS\").val()!=undefined) {\n" +
-                "    $(\"#ctl00_MainContent_Login1_SNILS\").val(SNILS);\n" +
+                " if ($(\"#birthday\").val()!=undefined) {\n" +
+                "    var br=$(\"#birthday\"); br.focus(); br.val(tbxBirthday);\n" +
                 " };\n" +
-                " if ($(\"#ctl00_MainContent_Login1_tbxBirthday\").val()!=undefined) {\n" +
-                "    $(\"#ctl00_MainContent_Login1_tbxBirthday\").val(tbxBirthday);\n" +
-                " };\n" +
-                " //setTimeout(function(){X18(userName,loginPass,serialNum,SNILS,tbxBirthday)},8000);\n" +
+                " setTimeout(function(){X18(userName,loginPass,serialNum,SNILS,tbxBirthday)},8000);\n" +
                 "}";
 
 

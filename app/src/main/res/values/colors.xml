@@ -2,4 +2,6 @@
 
     <color name="black_overlay">#66000000</color>
 
+    <color name="menu_bg">#bb8c8c8c</color>
+
 </resources>

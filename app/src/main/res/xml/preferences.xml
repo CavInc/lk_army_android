@@ -6,7 +6,8 @@
             android:key="loginReg"
             android:maxLines="1"
             android:singleLine="true"
-            android:defaultValue="Nothing">
+            android:defaultValue="Nothing"
+            android:inputType="number">
         </EditTextPreference>
         <EditTextPreference android:name="LoginPass"
             android:title="Пароль"
@@ -26,7 +27,8 @@
             android:title="Дата рождения"
             android:maxLines="1"
             android:singleLine="true"
-            android:key="dayBirth">
+            android:key="dayBirth"
+            android:inputType="date">
         </EditTextPreference>
     </PreferenceCategory>
     <PreferenceCategory android:title="@string/pref_title_login_gov">
@@ -40,7 +42,8 @@
             android:title="Дата рождения"
             android:maxLines="1"
             android:singleLine="true"
-            android:key="dayBirthGS">
+            android:key="dayBirthGS"
+            android:inputType="date">
         </EditTextPreference>
 
     </PreferenceCategory>

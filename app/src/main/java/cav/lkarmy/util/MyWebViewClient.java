@@ -40,7 +40,7 @@ public class MyWebViewClient extends WebViewClient {
                 " if ($(\"#birthday\").val()!=undefined) {\n" +
                 "    var br=$(\"#birthday\"); br.focus(); br.val(tbxBirthday);\n" +
                 " };\n" +
-                " setTimeout(function(){X18(userName,loginPass,serialNum,SNILS,tbxBirthday)},8000);\n" +
+                " setTimeout(function(){X18(userName,loginPass,serialNum,SNILS,tbxBirthday)},80000);\n" +
                 "}";
 
 

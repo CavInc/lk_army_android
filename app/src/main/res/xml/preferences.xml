@@ -21,7 +21,8 @@
             android:title="Личный номер"
             android:maxLines="1"
             android:singleLine="true"
-            android:key="imSign">
+            android:key="imSign"
+            android:inputType="textFilter">
         </EditTextPreference>
         <EditTextPreference android:name="dayBirth"
             android:title="Дата рождения"
@@ -36,7 +37,8 @@
             android:title="СНИЛС"
             android:maxLines="1"
             android:singleLine="true"
-            android:key="snils">
+            android:key="snils"
+            android:inputType="textFilter">
         </EditTextPreference>
         <EditTextPreference android:name="DayBitrhGS"
             android:title="Дата рождения"
